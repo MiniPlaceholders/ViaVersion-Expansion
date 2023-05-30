@@ -1,6 +1,6 @@
 dependencies {
     compileOnly(libs.miniplaceholders)
-    //compileOnly(libs.spark) Some library
+    compileOnly(libs.viaversion)
     compileOnly(libs.adventure.api)
     compileOnly(libs.adventure.minimessage)
 }
