@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation(projects.exampleExpansionVelocity)
-    implementation(projects.exampleExpansionPaper)
+    implementation(projects.viaversionExpansionVelocity)
+    implementation(projects.viaversionExpansionPaper)
 }
 
 subprojects {

@@ -1,14 +1,14 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "Example-Expansion"
+rootProject.name = "ViaVersion-Expansion"
 
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
 }
 
 arrayOf("common", "paper", "velocity").forEach {
-    include("example-expansion-$it")
+    include("viaversion-expansion-$it")
 
-    project(":example-expansion-$it").projectDir = file(it)
+    project(":viaversion-expansion-$it").projectDir = file(it)
 }
 
