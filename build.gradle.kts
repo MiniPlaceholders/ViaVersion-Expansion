@@ -12,6 +12,7 @@ subprojects {
     apply<JavaPlugin>()
     repositories {
         maven("https://papermc.io/repo/repository/maven-public/")
+        maven("https://repo.viaversion.com")
     }
     java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
     tasks {
@@ -24,7 +25,7 @@ subprojects {
 
 tasks {
     shadowJar {
-        archiveFileName.set("${rootProject.name}-${project.version}.jar")
+        archiveFileName.set("MiniPlaceholders-${rootProject.name}-${project.version}.jar")
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
     build {

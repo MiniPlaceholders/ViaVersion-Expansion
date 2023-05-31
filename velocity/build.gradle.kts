@@ -6,10 +6,10 @@ dependencies {
     compileOnly(libs.velocity.api)
     annotationProcessor(libs.velocity.api)
     compileOnly(libs.miniplaceholders)
-    implementation(projects.viaversionExpansionCommon)
+    implementation(projects.exampleExpansionCommon)
 }
 
 blossom {
-    replaceTokenIn("src/main/java/io/github/miniplaceholders/expansion/viaversion/velocity/Constants.java")
+    replaceTokenIn("src/main/java/io/github/miniplaceholders/expansion/example/velocity/Constants.java")
     replaceToken("{version}", project.version)
 }
