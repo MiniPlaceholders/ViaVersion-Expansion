@@ -10,7 +10,7 @@ shadow = "8.1.1"
 runtask = "2.1.0"
 
 miniplaceholders = "2.2.0"
-adventure = "4.13.1"
+adventure = "4.18.0"
 viaversion = "[4.0.0,5.0.0)"
 
 [libraries]
