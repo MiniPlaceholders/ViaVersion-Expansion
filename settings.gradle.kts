@@ -3,7 +3,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "ViaVersion-Expansion"
 
 plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.5.0"
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.10.0"
 }
 
 arrayOf("common", "paper", "velocity").forEach {
