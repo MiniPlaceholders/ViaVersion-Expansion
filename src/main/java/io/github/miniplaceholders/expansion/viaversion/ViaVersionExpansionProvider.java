@@ -1,14 +1,18 @@
-package io.github.miniplaceholders.expansion.viaversion.common;
+package io.github.miniplaceholders.expansion.viaversion;
 
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.ViaAPI;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 import io.github.miniplaceholders.api.Expansion;
+import io.github.miniplaceholders.api.provider.ExpansionProvider;
+import io.github.miniplaceholders.api.provider.LoadRequirement;
 import net.kyori.adventure.identity.Identity;
 import net.kyori.adventure.text.minimessage.tag.Tag;
 
-public final class CommonExpansion {
-    public static Expansion.Builder builder() {
+public final class ViaVersionExpansionProvider implements ExpansionProvider {
+
+    @Override
+    public Expansion provideExpansion() {
         final ViaAPI<?> api = Via.getAPI();
         return Expansion.builder("viaversion")
                 .audiencePlaceholder("player_protocol_version", (aud, queue, ctx) -> {
@@ -23,6 +27,11 @@ public final class CommonExpansion {
                             .map(api::getPlayerVersion)
                             .orElse(-1);
                     return Tag.preProcessParsed(Integer.toString(id));
-                });
+                }).build();
+    }
+
+    @Override
+    public LoadRequirement loadRequirement() {
+        return LoadRequirement.requiredComplement("viaversion", "ViaVersion");
     }
 }

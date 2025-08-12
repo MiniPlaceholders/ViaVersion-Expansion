@@ -1,34 +1,23 @@
 plugins {
     java
-    alias(libs.plugins.shadow)
 }
 
 dependencies {
-    implementation(projects.viaversionExpansionVelocity)
-    implementation(projects.viaversionExpansionPaper)
+    compileOnly(libs.miniplaceholders)
+    compileOnly(libs.viaversion)
+    compileOnly(libs.adventure.api)
+    compileOnly(libs.adventure.minimessage)
 }
 
-subprojects {
-    apply<JavaPlugin>()
-    repositories {
-        maven("https://papermc.io/repo/repository/maven-public/")
-        maven("https://repo.viaversion.com")
-    }
-    java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-    tasks {
-        compileJava {
-            options.encoding = Charsets.UTF_8.name()
-            options.release.set(17)
-        }
-    }
+repositories {
+    maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.viaversion.com")
+    maven("https://central.sonatype.com/repository/maven-snapshots/")
 }
-
+java.toolchain.languageVersion.set(JavaLanguageVersion.of(21))
 tasks {
-    shadowJar {
-        archiveFileName.set("MiniPlaceholders-${rootProject.name}-${project.version}.jar")
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    }
-    build {
-        dependsOn(shadowJar)
+    compileJava {
+        options.encoding = Charsets.UTF_8.name()
+        options.release.set(21)
     }
 }
