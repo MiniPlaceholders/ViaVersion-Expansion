@@ -8,7 +8,7 @@ runtask = "2.1.0"
 
 miniplaceholders = "3.0.0-SNAPSHOT"
 adventure = "4.24.0"
-viaversion = "[4.0.0,5.0.0)"
+viaversion = "[5.4.2,5.4.3)"
 
 [libraries]
 
