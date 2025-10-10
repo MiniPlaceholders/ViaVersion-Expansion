@@ -6,7 +6,7 @@ blossom = "2.1.0"
 shadow = "8.1.1"
 runtask = "3.0.1"
 
-miniplaceholders = "3.0.1"
+miniplaceholders = "3.1.0"
 adventure = "4.25.0"
 viaversion = "[5.5.0,5.6.0)"
 
